@@ -9,7 +9,7 @@ let yPos
 // Instantiate THREE js
 let scene = new THREE.Scene();
 
-let cameraSize = 400
+let cameraSize = 200
 let cameraWidth = viewport.clientWidth / cameraSize
 let cameraHeight = viewport.clientHeight / cameraSize
 let camera = new THREE.OrthographicCamera(-cameraWidth, cameraWidth, cameraHeight, -cameraHeight, 0.1, 100);
@@ -45,27 +45,42 @@ window.addEventListener("resize", resize, false)
 
 // Position camera based on mouse position
 function translate(e) {
-    // Clamp mouse x y to -4 to 4
-    xPos = (e.pageX / document.body.clientWidth) * 8 - 4
-    yPos = (e.pageY / document.body.clientHeight) * 8 - 4
+    // Clamp mouse x y to -1 to 1
+    xPos = (e.pageX / document.body.clientWidth) * 2 - 1
+    yPos = (e.pageY / document.body.clientHeight) * 2 - 1
+
+    xPos *= 2
+    yPos *= 2
 }
 
 document.addEventListener("mousemove", translate, false)
 
-// Create Cube
-let geometry = new THREE.BoxBufferGeometry()
+// Load GLTF Model
+let loader = new THREE.GLTFLoader();
+let mixer
 
-var material = new THREE.MeshPhongMaterial({
-    color: 0xecf0f1,
-    side: THREE.DoubleSide
-});
-var cube = new THREE.Mesh(geometry, material);
-cube.rotation.x = Math.PI / 4
-cube.rotation.y = Math.PI / 4
-scene.add(cube);
+loader.load("./assets/cube.glb",
+    // called when the resource is loaded
+    function (gltf) {
+        // Add scene to three js
+        scene.add(gltf.scene);
+
+        // Add animations
+        mixer = new THREE.AnimationMixer(gltf.scene);
+        var action = mixer.clipAction(gltf.animations[0]);
+        action.play()
+    },
+    // called while loading is progressing
+    function (xhr) {
+        console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+    },
+    // called when loading has errors
+    function (error) {
+        console.log('An error happened');
+    })
 
 // Create ambient light
-var light = new THREE.AmbientLight(0xd5c1f8);
+var light = new THREE.AmbientLight(0xd5c1f8, 0.6);
 scene.add(light);
 
 // Create directional light
@@ -73,23 +88,27 @@ var directionalLight = new THREE.DirectionalLight(0xffffff, 0.4);
 directionalLight.position.set(1, 1, 1)
 scene.add(directionalLight);
 
+// Animation clock
+let clock = new THREE.Clock();
+
 // Render loop
 function render() {
+    // Lock to 60fps
     setTimeout(function () {
         requestAnimationFrame(render);
     }, 1000 / 60);
     renderer.render(scene, camera);
 
-    // cube.rotation.x += 0.01;
-    cube.rotation.z += 0.01;
-
     // Move camera towards target position
     if (xPos != undefined && yPos != undefined) {
-        camera.position.x = lerp(camera.position.x, xPos, 0.04)
         camera.position.y = lerp(camera.position.y, yPos, 0.04)
 
-        camera.lookAt(cube.position)
+        camera.lookAt(new THREE.Vector3(0, 0, 0))
     }
+
+    // Play animation
+    var delta = clock.getDelta();
+    if (mixer) mixer.update(delta);
 
     if (!visible) {
         visible = true
