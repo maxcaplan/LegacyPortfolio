@@ -1,0 +1,165 @@
+/* ------ General Style ------ */
+
+@import url('https://fonts.googleapis.com/css?family=Nunito&family=Roboto:wght@400;900&display=swap');
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.no-select {
+    /* iOS Safari */
+    -webkit-touch-callout: none;
+    /* Safari */
+    -webkit-user-select: none;
+    /* Konqueror HTML */
+    -khtml-user-select: none;
+    /* Old versions of Firefox */
+    -moz-user-select: none;
+    /* Internet Explorer/Edge */
+    -ms-user-select: none;
+    /* Non-prefixed version, currently
+    supported by Chrome, Opera and Firefox */
+    user-select: none;
+}
+
+.fade-in {
+    filter: opacity(0);
+    animation: fade-in 2s ease forwards;
+}
+
+@keyframes fade-in {
+    0% {
+        filter: opacity(0);
+    }
+
+    100% {
+        filter: opacity(1);
+    }
+}
+
+.slide-in-left {
+    filter: opacity(0);
+    animation: slide-in-left 1s ease forwards;
+}
+
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(-300px);
+        filter: opacity(0)
+    }
+
+    100% {
+        transform: translateX(0px);
+        filter: opacity(1);
+    }
+}
+
+/* ------ Navbar Style ------ */
+
+#navbar {
+    height: 174px;
+    background-color: #5a0fe5;
+    position: absolute;
+    top: 0;
+    z-index: 100;
+}
+
+#nav-logo {
+    position: absolute;
+}
+
+#nav-logo img {
+    -webkit-filter: drop-shadow(0 0.5rem 1rem rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(0 0.5rem 1rem rgba(0, 0, 0, 0.25));
+}
+
+.nav-section {
+    text-decoration: none !important;
+    color: #ecf0f1;
+    font-size: xx-large;
+    font-family: 'Nunito', sans-serif;
+    border-bottom: #ecf0f100 3px solid;
+    transition: 0.5s;
+}
+
+.nav-section:hover {
+    color: #a8e944;
+    border-bottom: #ecf0f1ff 3px solid;
+}
+
+#nav-contact {
+    position: absolute;
+    right: 24px;
+    height: inherit;
+    padding-bottom: 48px;
+    display: flex;
+    align-items: center;
+}
+
+#nav-contact .btn {
+    border-radius: 40px;
+    background-color: #e50f9a;
+    border-color: #e50f9a;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+    font-size: 2rem;
+}
+
+#nav-contact .btn:hover {
+    background-color: #d4007f;
+}
+
+/* ------ Landing screen Style ------ */
+
+#landing {
+    background-color: #5a0fe5;
+    width: 100%;
+    height: 100%;
+    padding-top: 174px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+#dots {
+    position: absolute;
+    right: -25%;
+    bottom: -50%;
+    width: 100%;
+    transform: rotate(-30deg);
+}
+
+#landing-content {
+    background-image: linear-gradient(to top, #4500c6, #5a0fe5);
+}
+
+#landing .title {
+    color: #ecf0f1;
+    font-size: 8rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+}
+
+#landing .title-break {
+    height: 8px;
+    width: 100%;
+    border-radius: 8px;
+    background-color: #a8e944;
+}
+
+#landing .subtitle {
+    color: #ecf0f1;
+    font-family: "Nunito", sans-serif;
+}
+
+#cube {
+    width: 100%;
+    height: 500px;
+    margin: 0;
+
+    -webkit-filter: drop-shadow(0 0.5rem 1rem rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(0 0.5rem 1rem rgba(0, 0, 0, 0.25));
+}

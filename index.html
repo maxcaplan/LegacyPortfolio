@@ -4,32 +4,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
     <title>Max Caplan</title>
 
     <link rel="stylesheet" href="./css/style.css">
 
+    <!-- Material Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/90a18d65c3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./assets/bootstrap/dist/css/bootstrap.css">
 </head>
 
 <body>
-    <h1>Max Caplan</h1>
+    <!-- Navbar -->
+    <div id="navbar" class="w-100 p-4">
+        <!-- Logo -->
+        <div id="nav-logo">
+            <img src="./assets/MCLogoLight.svg" class="no-select" alt="" width="140">
+        </div>
 
+        <!-- Contact button -->
+        <div id="nav-contact">
+            <a href="#" class="btn btn-primary shadow">Contact</a>
+        </div>
+
+        <!-- navigation -->
+        <div class="h-100 w-100">
+            <div class="h-100 d-flex justify-content-center align-items-center list-group-flush">
+                <div class="row">
+                    <div class="col mr-5">
+                        <a class="nav-section text-shadow" href="#">About</a>
+                    </div>
+                    <div class="col mr-5">
+                        <a class="nav-section text-shadow" href="#">Skills</a>
+                    </div>
+                    <div class="col mr-5">
+                        <a class="nav-section" href="#">Portfolio</a>
+                    </div>
+                    <div class="col">
+                        <a class="nav-section text-shadow" href="#">Media</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Landing screen -->
+    <div id="landing">
+        <img id="dots" class="no-select fade-in" src="./assets/dots.svg" alt="">
+        <div id="landing-content" class="py-3 px-5 h-100">
+            <div class="h-100 d-flex align-items-center">
+                <div class="row w-100 m-0">
+                    <div class="col-auto d-flex align-items-center">
+                        <!-- Title -->
+                        <div>
+                            <h1 class="title slide-in-left">
+                                Max
+                            </h1>
+                            <div class="ml-5">
+                                <h1 class="title slide-in-left" style="animation-delay: 0.2s;">
+                                    Caplan
+                                </h1>
+                                <div class="title-break mb-3 fade-in" style="animation-delay: 0.4s;"></div>
+                                <h1 class="subtitle fade-in" style="animation-delay: 0.6s;"><i>Developer && Designer</i></h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mh-100">
+                        <div class="h-100 w-100">
+                            <!-- THREE js cube -->
+                            <canvas id="cube"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- THREE.js -->
+    <script src="./js/three.min.js"></script>
+
+    <!-- Page javascript -->
     <script src="./js/index.js"></script>
+    <script src="./js/cube.js"></script>
 
-    <!-- Bootstrap -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    <!-- Bootstrap javascript -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
     </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
+    <script src="./assets/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>
