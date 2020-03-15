@@ -1,5 +1,5 @@
 // THREE js cube for landing section
-let viewport = document.getElementById("cube")
+let viewport = document.getElementById("viewport")
 
 let visible = false
 
@@ -9,7 +9,30 @@ let yPos
 // Instantiate THREE js
 let scene = new THREE.Scene();
 
+// Scaling for ortho camera
 let cameraSize = 200
+let cameraLarge = 200
+let cameraMed = 170
+let cameraSmall = 140
+
+// Scaling for viewport
+let viewLarge = "500px"
+let viewMed = "400px"
+let viewSmall = "300px"
+
+// Responsive breakpoints
+if (viewport.clientWidth <= 400) {
+    cameraSize = cameraSmall
+    viewport.style.height = viewSmall
+} else if (viewport.clientWidth <= 1050) {
+    cameraSize = cameraMed
+    viewport.style.height = viewMed
+} else {
+    cameraSize = cameraLarge
+    viewport.style.height = viewLarge
+}
+
+// Camera Setup
 let cameraWidth = viewport.clientWidth / cameraSize
 let cameraHeight = viewport.clientHeight / cameraSize
 let camera = new THREE.OrthographicCamera(-cameraWidth, cameraWidth, cameraHeight, -cameraHeight, 0.1, 100);
@@ -28,7 +51,18 @@ function resize(e) {
     console.log("resize camera")
 
     viewport.style.width = "100%"
-    viewport.style.height = "500px"
+
+    // Responsive breakpoints
+    if (viewport.clientWidth <= 400) {
+        cameraSize = cameraSmall
+        viewport.style.height = viewSmall
+    } else if (viewport.clientWidth <= 1050) {
+        cameraSize = cameraMed
+        viewport.style.height = viewMed
+    } else {
+        cameraSize = cameraLarge
+        viewport.style.height = viewLarge
+    }
 
     renderer.setSize(viewport.clientWidth, viewport.clientHeight);
 
