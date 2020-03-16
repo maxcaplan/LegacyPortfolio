@@ -42,7 +42,8 @@ camera.position.z = 2;
 let renderer = new THREE.WebGLRenderer({
     canvas: viewport,
     alpha: true,
-    antialias: true
+    antialias: true,
+    powerPreference: "high-performance"
 });
 renderer.setSize(viewport.clientWidth, viewport.clientHeight);
 
@@ -86,8 +87,8 @@ function translate(e) {
     xPos *= 2
     yPos *= 2
 }
-
 document.addEventListener("mousemove", translate, false)
+
 
 // Load GLTF Model
 let loader = new THREE.GLTFLoader();
