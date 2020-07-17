@@ -12,3 +12,26 @@ let welcome = `
            `
 
 console.log(welcome)
+
+let phrases = [
+  "programming",
+  "designing",
+  "tinkering",
+  "making Stuff"
+]
+
+let currentPhrase = 0
+let phraseElm = document.getElementById('phrase')
+
+phraseElm.innerHTML = phrases[currentPhrase]
+
+function phraseLoop() {
+  setTimeout(function () {
+    if (currentPhrase >= phrases.length - 1) currentPhrase = 0
+    else currentPhrase ++
+
+    phraseElm.innerHTML = phrases[currentPhrase]
+
+    phraseLoop();
+  }, 5000);
+}
