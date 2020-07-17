@@ -18,7 +18,7 @@
     }
 
     100% {
-        stroke-width 0;
+        stroke-width: 0;
         -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
         filter: opacity(1);
         opacity: 1;
@@ -81,28 +81,22 @@
     }
 }
 
-.fade-loop {
-    animation: fade-loop 5s infinite
+.flash {
+    animation: flash 1s steps(2, end) infinite forwards;
 }
 
-@keyframes fade-loop {
+@keyframes flash {
     0% {
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+        filter: opacity(1);
+        opacity: 1;
+    }
+
+    /* 50% {
         -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
         filter: opacity(0);
         opacity: 0;
-    }
-
-    10% {
-        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-        filter: opacity(1);
-        opacity: 1;
-    }
-
-    90% {
-        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-        filter: opacity(1);
-        opacity: 1;
-    }
+    } */
 
     100% {
         -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";

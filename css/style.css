@@ -120,11 +120,10 @@ body {
     font-size: 5rem;
 }
 
-#phrase {
-    transition: 0.5s all;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: opacity(0);
-    opacity: 0;
+#cursor {
+    width: 1.25rem;
+    height: calc(100% - 0.5rem);
+    position: relative;
 }
 
 #header-bg {

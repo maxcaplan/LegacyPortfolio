@@ -18,8 +18,7 @@ new Vivus(
         console.log("removing from dom")
         event.target.remove()
 
-        document.getElementById("phrase").classList.add("fade-loop")
-        phraseLoop()
+        type()
       }
     });
   }

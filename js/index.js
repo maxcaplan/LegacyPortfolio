@@ -13,25 +13,65 @@ let welcome = `
 
 console.log(welcome)
 
+let alph = "abcdefghijklmnopqrstuvwxyz"
+let randomChar = false
+
 let phrases = [
   "programming",
   "designing",
   "tinkering",
-  "making Stuff"
+  "making stuff"
 ]
 
 let currentPhrase = 0
 let phraseElm = document.getElementById('phrase')
 
-phraseElm.innerHTML = phrases[currentPhrase]
+let pause = 0
 
-function phraseLoop() {
+let count = 0
+// phraseElm.innerHTML = phrases[currentPhrase]
+
+function type() {
   setTimeout(function () {
-    if (currentPhrase >= phrases.length - 1) currentPhrase = 0
-    else currentPhrase ++
+    if (!randomChar) phraseElm.innerHTML = phrases[currentPhrase].substring(0, count)
+    else {
+      count -= 2
+      phraseElm.innerHTML = phrases[currentPhrase].substring(0, count) + randomChar
+    }
 
-    phraseElm.innerHTML = phrases[currentPhrase]
+    if (Math.random() > 0.9 && !randomChar && count > 0) randomChar = alph.charAt(Math.round(Math.random() * (alph.length - 1)))
+    else randomChar = false
 
-    phraseLoop();
-  }, 5000);
+    if (randomChar) pause = 100
+    else pause = 0
+
+    count++
+
+    if (count <= phrases[currentPhrase].length) type()
+    else wait()
+  }, 100 + Math.round(Math.random() * 150) + pause)
+}
+
+function erase() {
+  setTimeout(function () {
+    phraseElm.innerHTML = phrases[currentPhrase].substring(0, count)
+
+    count--
+
+    if (count >= 0) erase()
+    else changePhrase()
+  }, 50 + Math.round(Math.random() * 150))
+}
+
+function wait() {
+  setTimeout(function () {
+    erase()
+  }, 2000)
+}
+
+function changePhrase() {
+  if (currentPhrase >= phrases.length - 1) currentPhrase = 0
+  else currentPhrase++
+
+  type()
 }
