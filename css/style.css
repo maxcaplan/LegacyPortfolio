@@ -7,7 +7,11 @@ body {
     width: 100%;
     height: 100%;
     margin: 0;
-    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.hide-scroll {
+    overflow: hidden;
 }
 
 #splash {
@@ -19,6 +23,26 @@ body {
     z-index: 9999;
 
     animation-delay: 3s;
+}
+
+#grain {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+
+    z-index: 10000;
+}
+
+#grain video {
+    min-width: 100%;
+    min-height: 100%;
+
+    mix-blend-mode: screen;
+    opacity: 0.1;
 }
 
 #splash-bg {
@@ -90,16 +114,36 @@ body {
     position: fixed;
     top: 0;
 
-    z-index: 999;
+    z-index: 900;
 
     width: 100%;
 }
 
-#nav-spacer {}
+#navbar img {
+    height: 50px;
+    transition: 0.8s height;
+}
+
+.shrink img {
+    height: 38px !important;
+}
+
+@media (max-width: 430px) {
+    #navbar img {
+        height: 38px;
+    }
+
+    .shrink img {
+        height: 24px !important;
+    }
+}
 
 #content {
     padding-top: 80px;
     min-height: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .navbar-brand img {
@@ -107,11 +151,10 @@ body {
 }
 
 #header {
-    position: absolute;
     width: 100%;
-    height: calc(100% - 80px);
-    top: 80px;
-    left: 0;
+    height: calc(100vh - 80px);
+
+    min-height: calc(100% - 80px);
 
     overflow: hidden;
 }
@@ -122,7 +165,7 @@ body {
 
 #cursor {
     width: 1.25rem;
-    height: calc(100% - 0.5rem);
+    height: 2.5rem;
     position: relative;
 }
 
@@ -143,8 +186,47 @@ body {
 
     width: 300px;
 
+    opacity: 0.5;
+
     margin-bottom: 3rem;
 }
+
+
+#about {
+    width: 100%;
+    background-color: #1c2024;
+    position: relative;
+    overflow: hidden;
+}
+
+.arrow {
+    width: 0px;
+    height: 100%;
+
+    display: inline-flex;
+    overflow: hidden;
+
+    transition: width 0.5s;
+}
+
+#more-about-btn {
+    overflow: hidden;
+    transition: all 0.5s;
+}
+
+#more-about-btn:hover>.arrow {
+    width: auto;
+}
+
+#footer {
+    width: 100%;
+    background: #23282c;
+}
+
+#footer-about {
+    max-width: 24rem;
+}
+
 
 @media (max-width: 992px) {
     #header-dots {
