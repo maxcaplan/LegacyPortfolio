@@ -159,8 +159,17 @@ body {
     overflow: hidden;
 }
 
+#header-content {
+    z-index: 100;
+}
+
 #header-title {
     font-size: 5rem;
+}
+
+#astro {
+    opacity: 0.5;
+    max-height: 100%;
 }
 
 #cursor {
@@ -176,6 +185,43 @@ body {
     top: 0;
     left: 0;
     z-index: 0;
+
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: opacity(0);
+    opacity: 0;
+
+    transform: translate(120px, 120px);
+
+    animation-delay: 3s;
+}
+
+#header-wave-lg {
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    width: 100%;
+    max-height: 90%;
+}
+
+#header-wave {
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    width: 100%;
+    max-height: 90%;
+}
+
+#header-wave-sm {
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    height: 100%;
 }
 
 #header-dots {

@@ -63,6 +63,28 @@
     }
 }
 
+.fade-in-bottom-right {
+    animation: fade-in-bottom-right 1s ease forwards;
+}
+
+@keyframes fade-in-bottom-right {
+    0% {
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        filter: opacity(0);
+        opacity: 0;
+
+        transform: translate(120px, 120px);
+    }
+
+    100% {
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+        filter: opacity(1);
+        opacity: 1;
+
+        transform: translate(0, 0);
+    }
+}
+
 .fade-out {
     animation: fade-out 1s ease forwards
 }
