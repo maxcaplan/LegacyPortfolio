@@ -1,0 +1,60 @@
+/* ------ General Style ------ */
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital@0;1&display=swap");
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+.hide-scroll {
+  overflow: hidden;
+}
+
+#content {
+  padding-top: 80px;
+  min-height: 100%;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+
+#about {
+  width: 100%;
+  background-color: #1c2024;
+  position: relative;
+  overflow: hidden;
+}
+
+.arrow {
+  width: 0px;
+  height: 100%;
+
+  display: inline-flex;
+  overflow: hidden;
+
+  transition: width 0.5s;
+}
+
+#more-about-btn {
+  overflow: hidden;
+  transition: all 0.5s;
+}
+
+#more-about-btn:hover > .arrow {
+  width: auto;
+}
+
+#footer {
+  width: 100%;
+  background: #23282c;
+}
+
+#footer-about {
+  max-width: 24rem;
+}
