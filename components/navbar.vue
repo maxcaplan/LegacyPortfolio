@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item" href="#">
+      <a class="navbar-item py-0 mx-3 my-2" href="#">
         <img src="../assets/images/logo/logo.svg" width="50.9833" height="28" />
         <p class="ml-4 is-size-4 has-text-weight-bold is-hidden-touch">
           Max Caplan
@@ -170,6 +170,15 @@ export default {
 </script>
 
 <style scoped>
+nav {
+  background: #00000000;
+}
+
+.navbar-brand .navbar-item {
+  border-radius: 0.25rem;
+  background: #fff;
+}
+
 .is-borderless {
   border: none;
 }
@@ -178,6 +187,7 @@ export default {
   border: 1px solid rgb(219, 219, 219);
   border-radius: 0.375rem;
   padding: 0.5rem;
+  background: #fff;
 }
 
 .field.is-grouped > .control:not(:last-child) {
