@@ -38,7 +38,11 @@ export default {
         href: "/safari-pinned-tab.svg?v=1",
         color: "#3772ff"
       },
-      { rel: "shortcut icon", href: "/favicon.ico?v=1" }
+      { rel: "shortcut icon", href: "/favicon.ico?v=1" },
+      {
+        href: "https://fonts.googleapis.com/icon?family=Material+Icons",
+        rel: "stylesheet"
+      }
     ]
   },
 
