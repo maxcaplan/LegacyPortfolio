@@ -84,6 +84,8 @@
                   home
                 </span>
               </span>
+
+              <span>Home</span>
             </button>
           </p>
 
@@ -197,6 +199,15 @@ export default {
   position: relative;
   height: 42px;
   overflow: hidden;
+}
+
+#custom-menu .field {
+  margin-right: 40px;
+  overflow: hidden;
+}
+
+#custom-menu.menu-open .field {
+  overflow-x: scroll;
 }
 
 #hamburger-button {
