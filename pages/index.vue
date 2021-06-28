@@ -3,19 +3,24 @@
     <navbar id="navbar" />
 
     <home />
+
+    <about />
   </div>
 </template>
 
 <script>
 import navbar from "../components/navbar.vue";
+
 import home from "../components/home.vue";
+import about from "../components/about.vue";
 
 export default {
   name: "home-page",
 
   components: {
     navbar,
-    home
+    home,
+    about
   }
 };
 </script>
