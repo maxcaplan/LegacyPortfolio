@@ -1,26 +1,33 @@
 <template>
   <div id="home-page">
     <navbar id="navbar" />
+    <navbar-small />
 
     <home />
 
     <about />
+
+    <work />
   </div>
 </template>
 
 <script>
 import navbar from "../components/navbar.vue";
+import navbarSmall from "../components/navbar-small.vue";
 
 import home from "../components/home.vue";
 import about from "../components/about.vue";
+import work from "../components/work.vue";
 
 export default {
   name: "home-page",
 
   components: {
     navbar,
+    navbarSmall,
     home,
-    about
+    about,
+    work
   }
 };
 </script>
