@@ -26,7 +26,7 @@
           <div class="card max-card">
             <img
               class="image"
-              src="../assets/images/maxcaplan.png"
+              src="/maxcaplan.png"
               alt="Max Caplan"
             />
 
