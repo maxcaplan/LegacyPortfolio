@@ -2,7 +2,7 @@
   <div id="home-wrapper">
     <logo />
 
-    <section id="home" class="section">
+    <section id="home" class="section scroll-section">
       <div class="container">
         <div style="width: 100%;">
           <div class="columns">

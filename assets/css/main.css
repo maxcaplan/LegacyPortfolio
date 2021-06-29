@@ -1,6 +1,10 @@
 @import "../../node_modules/bulma/css/bulma.css";
 @import "../../node_modules/material-icons/iconfont/material-icons.css";
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body,
 #__nuxt {

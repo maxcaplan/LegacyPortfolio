@@ -1,5 +1,5 @@
 <template>
-  <section id="about" class="section">
+  <section id="work" class="section scroll-section">
     <div class="container">
       <div class="columns is-vcentered is-mobile">
         <div class="column is-narrow">

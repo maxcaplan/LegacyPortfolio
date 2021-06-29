@@ -1,5 +1,5 @@
 <template>
-  <section id="about" class="section">
+  <section id="about" class="section scroll-section">
     <div class="container">
       <div class="columns is-vcentered is-mobile">
         <div class="column is-narrow">
@@ -24,11 +24,7 @@
           class="column is-one-third-desktop is-flex is-justify-content-center"
         >
           <div class="card max-card">
-            <img
-              class="image"
-              src="/maxcaplan.png"
-              alt="Max Caplan"
-            />
+            <img class="image" src="/maxcaplan.png" alt="Max Caplan" />
 
             <div class="box p-3 has-background-primary-light">
               <h1

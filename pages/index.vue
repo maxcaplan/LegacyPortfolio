@@ -1,7 +1,7 @@
 <template>
   <div id="home-page">
-    <navbar id="navbar" />
-    <navbar-small />
+    <navbar id="navbar" :active="currentSection" />
+    <navbar-small :active="currentSection" />
 
     <home />
 
@@ -28,6 +28,69 @@ export default {
     home,
     about,
     work
+  },
+
+  data: function() {
+    return {
+      sections: [],
+      currentSection: 0
+    };
+  },
+
+  mounted() {
+    const sections = document.getElementsByClassName("scroll-section");
+
+    for (let section of sections) {
+      const sectionHeight = section.offsetHeight;
+      const sectionTop =
+        section.offsetTop - (window.innerWidth >= 1023 ? 74 : 52);
+      const sectionId = section.getAttribute("id");
+      this.sections.push({
+        el: section,
+        id: sectionId,
+        height: sectionHeight,
+        top: sectionTop
+      });
+    }
+
+    this.handleScroll();
+
+    window.addEventListener("resize", this.handleResize);
+    window.addEventListener("scroll", this.handleScroll);
+  },
+
+  unmounted() {
+    window.removeEventListener("resize", this.handleResize);
+    window.removeEventListener("scroll", this.handleScroll);
+  },
+
+  methods: {
+    handleResize() {
+      this.sections.forEach(section => {
+        let el = section.el;
+
+        const sectionHeight = el.offsetHeight;
+        const sectionTop = el.offsetTop - (window.innerWidth >= 1023 ? 74 : 52);
+
+        section.height = sectionHeight;
+        section.top = sectionTop;
+      });
+
+      this.handleScroll();
+    },
+
+    handleScroll() {
+      let scrollY = window.pageYOffset;
+
+      for (let i = 0; i < this.sections.length; i++) {
+        const section = this.sections[i];
+
+        if (scrollY > section.top && scrollY <= section.top + section.height) {
+          this.currentSection = i;
+          break;
+        }
+      }
+    }
   }
 };
 </script>

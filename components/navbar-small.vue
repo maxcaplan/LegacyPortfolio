@@ -7,55 +7,79 @@
     <div id="nav-menu-sections-small">
       <div class="field is-grouped">
         <p class="control">
-          <button class="button is-link is-light">
+          <a
+            href="#home"
+            class="button is-link"
+            :class="active === 0 ? 'is-light' : 'is-inverted'"
+          >
             <span class="icon">
               <span class="material-icons-round">
                 home
               </span>
             </span>
 
-            <span>Home</span>
-          </button>
+            <span v-if="active === 0">Home</span>
+          </a>
         </p>
 
         <p class="control">
-          <button class="button is-primary is-inverted">
+          <a
+            href="#about"
+            class="button is-primary"
+            :class="active === 1 ? 'is-light' : 'is-inverted'"
+          >
             <span class="icon">
               <span class="material-icons-round">
                 person
               </span>
             </span>
-          </button>
+
+            <span v-if="active === 1">About</span>
+          </a>
         </p>
 
         <p class="control">
-          <button class="button is-danger is-inverted">
+          <a
+            href="#work"
+            class="button is-danger"
+            :class="active === 2 ? 'is-light' : 'is-inverted'"
+          >
             <span class="icon">
               <span class="material-icons-round">
                 description
               </span>
             </span>
-          </button>
+
+            <span v-if="active === 2">Work</span>
+          </a>
         </p>
 
-        <p class="control">
-          <button class="button is-warning is-inverted">
+        <!-- <p class="control">
+          <a href="#skills" class="button is-warning" :class="active === 0 ? 'is-light' : 'is-inverted'">
             <span class="icon">
               <span class="material-icons-round">
                 build
               </span>
             </span>
-          </button>
-        </p>
+
+            <span v-if="active === 0">Skills</span> 
+          </a>
+        </p> -->
 
         <p class="control">
-          <button class="button is-success is-inverted">
+          <a
+            href="#contact"
+            class="button is-success"
+            :class="active === 3 ? 'is-light' : 'is-inverted'"
+          >
             <span class="icon">
               <span class="material-icons-round">
                 mail
               </span>
             </span>
-          </button>
+
+            <span v-if="active === 3">Contact</span>
+          </a>
         </p>
       </div>
 
@@ -81,6 +105,10 @@
 <script>
 export default {
   name: "navbar-small",
+
+  props: {
+    active: Number
+  },
 
   data: function() {
     return {
@@ -157,5 +185,9 @@ export default {
 
 #custom-menu.menu-open {
   width: calc(100% - 24px) !important;
+}
+
+a.button {
+  transition: background 0.5s ease;
 }
 </style>
