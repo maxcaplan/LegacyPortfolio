@@ -4,7 +4,7 @@
     class="is-hidden-desktop"
     :class="{ 'menu-open': menuOpen }"
   >
-    <div id="nav-menu-sections-small">
+    <div id="nav-menu">
       <div class="field is-grouped">
         <p class="control">
           <a
@@ -142,13 +142,24 @@ export default {
   background: #f2f2f2;
 }
 
-#nav-menu-sections-small {
+#nav-menu {
   background-color: #fff;
   border: 1px solid rgb(219, 219, 219);
   border-radius: 0.375rem;
   position: relative;
   height: 42px;
   overflow: hidden;
+  opacity: 0.75;
+  transition: opacity 0.5s ease;
+}
+
+#nav-menu:hover {
+  opacity: 1;
+}
+
+.current-section-home #nav-menu,
+.menu-open #nav-menu {
+  opacity: 1;
 }
 
 #custom-menu .field {

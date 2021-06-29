@@ -1,5 +1,5 @@
 <template>
-  <div id="home-page">
+  <div id="home-page" :class="sectionClass">
     <navbar id="navbar" :active="currentSection" />
     <navbar-small :active="currentSection" />
 
@@ -35,6 +35,16 @@ export default {
       sections: [],
       currentSection: 0
     };
+  },
+
+  computed: {
+    sectionClass() {
+      if (this.sections.length > 0) {
+        return "current-section-" + this.sections[this.currentSection].id;
+      } else {
+        return;
+      }
+    }
   },
 
   mounted() {

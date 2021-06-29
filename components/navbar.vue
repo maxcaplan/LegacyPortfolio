@@ -3,7 +3,7 @@
     <div class="navbar-menu">
       <div class="navbar-end">
         <div class="navbar-item">
-          <div id="nav-menu-sections">
+          <div id="nav-menu">
             <div class="field is-grouped">
               <p class="control">
                 <a
@@ -111,11 +111,21 @@ nav {
   border: none;
 }
 
-#nav-menu-sections {
+#nav-menu {
   border: 1px solid rgb(219, 219, 219);
   border-radius: 0.375rem;
   padding: 0.5rem;
   background: #fff;
+  opacity: 0.75;
+  transition: opacity 0.5s ease;
+}
+
+#nav-menu:hover {
+  opacity: 1;
+}
+
+.current-section-home #nav-menu {
+  opacity: 1;
 }
 
 .field.is-grouped > .control:not(:last-child) {
