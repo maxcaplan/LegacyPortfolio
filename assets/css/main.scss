@@ -1,5 +1,7 @@
-@import "../../node_modules/bulma/bulma.sass";
-
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
 
 $family-sans-serif: "Ubuntu", sans-serif;
+$tooltip-padding: 0.25rem 0.5rem;
+
+@import "bulma";
+@import "@creativebulma/bulma-tooltip";

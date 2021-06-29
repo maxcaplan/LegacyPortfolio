@@ -10,10 +10,14 @@
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
+    "@creativebulma/bulma-tooltip": "^1.2.0",
+    "@nuxtjs/axios": "^5.13.6",
+    "@nuxtjs/proxy": "^2.1.0",
     "bulma": "^0.9.3",
     "core-js": "^3.15.1",
     "material-icons": "^0.7.4",
-    "nuxt": "^2.15.7"
+    "nuxt": "^2.15.7",
+    "vue2-touch-events": "^3.2.2"
   },
   "devDependencies": {
     "push-dir": "^0.4.1",

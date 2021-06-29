@@ -8,12 +8,15 @@
     <about />
 
     <work />
+
+    <page-footer />
   </div>
 </template>
 
 <script>
 import navbar from "../components/navbar.vue";
 import navbarSmall from "../components/navbar-small.vue";
+import pageFooter from "../components/footer.vue";
 
 import home from "../components/home.vue";
 import about from "../components/about.vue";
@@ -25,6 +28,7 @@ export default {
   components: {
     navbar,
     navbarSmall,
+    pageFooter,
     home,
     about,
     work
