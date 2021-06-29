@@ -1,5 +1,7 @@
 <template>
   <div id="home-wrapper">
+    <logo />
+
     <section id="home" class="section">
       <div class="container">
         <div style="width: 100%;">
@@ -21,8 +23,14 @@
 </template>
 
 <script>
+import logo from "./logo.vue";
+
 export default {
-  name: "home"
+  name: "home",
+
+  components: {
+    logo
+  }
 };
 </script>
 
