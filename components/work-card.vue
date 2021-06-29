@@ -11,7 +11,10 @@
       </figure>
     </div>
 
-    <div class="card-content" :class="tags && tags.length > 0 ? 'pb-6' : 'pb-5'">
+    <div
+      class="card-content"
+      :class="tags && tags.length > 0 ? 'pb-6' : 'pb-5'"
+    >
       <p class="title mb-3">
         {{ title }}
       </p>
@@ -86,7 +89,7 @@ export default {
   position: absolute;
   bottom: 0;
   right: 0;
-  margin-bottom: 12px;
-  margin-right: 24px;
+  margin-bottom: 12px !important;
+  margin-right: 24px !important;
 }
 </style>
