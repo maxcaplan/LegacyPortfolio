@@ -291,9 +291,8 @@ export default {
       copied: false,
       failed: false,
       quote: {
-        author: null,
-        quote: null,
-        link: null,
+        author: "Max Caplan",
+        quote: "The quote is loading.",
         loaded: false
       }
     };
@@ -313,13 +312,11 @@ export default {
 
   async mounted() {
     try {
-      const result = await this.$axios.$get(
-        "http://quotes.stormconsultancy.co.uk/random.json"
-      );
+      this.$axios.setHeader("Access-Control-Allow-Origin", "*");
+      const result = await this.$axios.$get("/quotes/today");
 
-      this.quote.author = result.author;
-      this.quote.quote = result.quote;
-      this.quote.link = result.permalink;
+      this.quote.author = result[0].a;
+      this.quote.quote = result[0].q;
       this.quote.loaded = true;
     } catch (e) {
       console.error(e);
