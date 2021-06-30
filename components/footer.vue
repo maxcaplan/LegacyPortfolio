@@ -313,7 +313,7 @@ export default {
   async mounted() {
     try {
       this.$axios.setHeader("Access-Control-Allow-Origin", "*");
-      const result = await this.$axios.$get("/quotes/today");
+      const result = await this.$axios.$get("https://zenquotes.io/api/today");
 
       this.quote.author = result[0].a;
       this.quote.quote = result[0].q;
