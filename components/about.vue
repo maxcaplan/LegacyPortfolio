@@ -26,11 +26,9 @@
           <div class="card max-card">
             <img class="image" src="/maxcaplan.png" alt="Max Caplan" />
 
-            <div class="box p-3 has-background-primary-light">
-              <h1
-                class="title is-size-3-desktop is-size-5 has-text-primary-dark"
-              >
-                Max Caplan
+            <div class="box p-3 has-background-link-light">
+              <h1 class="title is-size-3-desktop is-size-5 has-text-link-dark">
+                This Guy^
               </h1>
             </div>
           </div>
@@ -94,17 +92,17 @@
               <div class="content">
                 <ol class="code is-family-monospace">
                   <li class="mb-5">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
-                  </li>
-
-                  <li class="mb-5">
-                    Nulla facilisi cras fermentum odio eu feugiat pretium nibh.
+                    Hi, I'm Max! I'm a full stack web developer and designer
+                    with over 3 years of freelance experience and a lifetime of
+                    passion for building things!
                   </li>
 
                   <li>
-                    Fames ac turpis egestas integer eget aliquet nibh.
+                    I really enjoy learning new things and problem solving as a
+                    developer, and, as a designer, I love creating unique and
+                    engaging experiences. I am a very detail oriented person who
+                    puts a lot of emphasis into how people interact with the
+                    things I make.
                   </li>
                 </ol>
               </div>
