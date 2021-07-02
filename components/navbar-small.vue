@@ -4,7 +4,7 @@
     class="is-hidden-desktop"
     :class="{ 'menu-open': menuOpen }"
   >
-    <div id="nav-menu">
+    <div id="nav-menu" ref="menu">
       <div class="field is-grouped">
         <p class="control">
           <a
@@ -103,6 +103,8 @@
 </template>
 
 <script>
+import anime from "animejs/lib/anime.js";
+
 export default {
   name: "navbar-small",
 
@@ -114,6 +116,16 @@ export default {
     return {
       menuOpen: false
     };
+  },
+
+  mounted() {
+    anime({
+      targets: this.$refs.menu,
+      duration: 1000,
+      delay: 500,
+      easing: "easeInOutCubic",
+      translateX: [54, 0]
+    });
   },
 
   methods: {
@@ -151,6 +163,7 @@ export default {
   overflow: hidden;
   opacity: 0.75;
   transition: opacity 0.5s ease;
+  transform: translateX(54px);
 }
 
 #nav-menu:hover {

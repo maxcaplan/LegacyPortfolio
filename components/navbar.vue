@@ -3,7 +3,7 @@
     <div class="navbar-menu">
       <div class="navbar-end">
         <div class="navbar-item">
-          <div id="nav-menu">
+          <div id="nav-menu" ref="menu">
             <div class="field is-grouped">
               <p class="control">
                 <a
@@ -93,11 +93,23 @@
 </template>
 
 <script>
+import anime from "animejs/lib/anime.js";
+
 export default {
   name: "navbar",
 
   props: {
     active: Number
+  },
+
+  mounted() {
+    anime({
+      targets: this.$refs.menu,
+      duration: 1000,
+      delay: 1000,
+      easing: "easeInOutCubic",
+      translateX: [260, 0]
+    });
   }
 };
 </script>
@@ -118,6 +130,7 @@ nav {
   background: #fff;
   opacity: 0.75;
   transition: opacity 0.5s ease;
+  transform: translateX(calc(100% + 12px));
 }
 
 #nav-menu:hover {
