@@ -29,6 +29,7 @@
               { name: 'Nuxt', color: 'success' },
               { name: 'Firebase', color: 'danger' }
             ]"
+            :link="'https://sparkwest.network/'"
             >An umbrella marketing company for rural entrepreneurship in the
             Annapolis Valley area.</work-card
           >
@@ -42,6 +43,7 @@
               { name: 'Nuxt', color: 'success' },
               { name: 'Firebase', color: 'danger' }
             ]"
+            :link="'https://www.goodgoods.ca/'"
             >GoodGoodsCAN Limited is a social enterprise that promotes products
             and services provided by Charities, Non Profit organizations and
             Social Entrepreneurs.

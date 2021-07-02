@@ -1,5 +1,10 @@
 <template>
-  <div class="card is-clickable" :class="'card-' + color">
+  <a
+    class="card is-block"
+    :class="'card-' + color"
+    :href="link ? link : '#'"
+    :target="link ? '_blank' : ''"
+  >
     <div class="card-image">
       <figure class="image is-4by3">
         <img
@@ -36,14 +41,20 @@
         >
       </div>
     </div>
-  </div>
+  </a>
 </template>
 
 <script>
 export default {
   name: "work-card",
 
-  props: { title: String, image: String, color: String, tags: Array }
+  props: {
+    title: String,
+    image: String,
+    color: String,
+    tags: Array,
+    link: String
+  }
 };
 </script>
 
