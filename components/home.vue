@@ -7,16 +7,19 @@
         <div style="width: 100%;">
           <div class="columns">
             <div class="column is-narrow">
-              <h1 class="title is-size-1-touch">
-                Hi. <br />
-                I'm Max,
-              </h1>
-              <h2 class="subtitle is-size-3-touch">
-                <span class="has-background-link-light has-text-link-dark px-2 py-1"
-                  >And I like</span
-                >
-                designing
-              </h2>
+              <div id="header-text">
+                <h1 class="title is-size-1-touch">
+                  Hi. <br />
+                  I'm Max,
+                </h1>
+                <h2 class="subtitle is-size-3-touch">
+                  <span
+                    class="has-background-link-light has-text-link-dark px-2 py-1"
+                    >And I like</span
+                  >
+                  designing
+                </h2>
+              </div>
             </div>
 
             <div class="column"></div>
@@ -57,6 +60,22 @@ export default {
   height: 100%;
   display: flex;
   align-items: center;
+}
+
+#header-text {
+  opacity: 0;
+  animation: textFadeIn 1s ease 0.5s forwards;
+}
+
+@keyframes textFadeIn {
+  from {
+    transform: translateY(-24px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .title {

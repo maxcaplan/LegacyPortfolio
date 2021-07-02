@@ -82,7 +82,7 @@ export default {
         top: 0,
         opacity: 1,
         duration: 500,
-        delay: 1000
+        delay: 500
       })
         .add({
           targets: pathFirst,

@@ -106,7 +106,7 @@ export default {
     anime({
       targets: this.$refs.menu,
       duration: 1000,
-      delay: 1000,
+      delay: 500,
       easing: "easeInOutCubic",
       translateX: [260, 0]
     });
