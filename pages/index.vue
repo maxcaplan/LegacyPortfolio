@@ -9,6 +9,8 @@
 
     <work />
 
+    <contact />
+
     <page-footer />
   </div>
 </template>
@@ -21,6 +23,7 @@ import pageFooter from "../components/footer.vue";
 import home from "../components/home.vue";
 import about from "../components/about.vue";
 import work from "../components/work.vue";
+import contact from "../components/contact.vue";
 
 export default {
   name: "home-page",
@@ -31,7 +34,8 @@ export default {
     pageFooter,
     home,
     about,
-    work
+    work,
+    contact
   },
 
   data: function() {
