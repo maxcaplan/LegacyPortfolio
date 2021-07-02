@@ -11,7 +11,12 @@
                 Hi. <br />
                 I'm Max,
               </h1>
-              <h2 class="subtitle is-size-3-touch">And I like designing</h2>
+              <h2 class="subtitle is-size-3-touch">
+                <span class="has-background-link-light has-text-link-dark px-2 py-1"
+                  >And I like</span
+                >
+                designing
+              </h2>
             </div>
 
             <div class="column"></div>
