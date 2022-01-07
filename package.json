@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "push-dir": "^0.4.1",
-    "sass": "^1.35.1",
+    "sass": "^1.46.0",
     "sass-loader": "^10"
   }
 }
